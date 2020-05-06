@@ -19,36 +19,36 @@ chem=input('introduire le chemin de votre repertoire')
 ftp.cwd(chem)
 
 #choisir l'action à faire
-
-action=input('que souhaitez faire(choisir 1 a 7):\n 1: creation dossier \n 2: supprimer dossier \n 3: renommer dossier \n 4: renommer fichier \n 5: supprimer fichier \n 6: lister le contenu du repertoire \7: envoie de fichier')
-#Création d'un nouveau dossier
-if action == 1:
-        new_name=input('nom du nouveau dossier')
-        ftp.mkd(new_name)
-#Suppimer le dossier de votre choix
-elif action == 2:
-        name=input('nom du dossier a supprimer')
-        ftp.rmd(name)
-#Renommer le dossier de votre choix
-elif action==3:
-        name1=input('introduire dossier a renommer')
-        name2=input('choisir le nouveau nom')
-        ftp.rename(name1,name2)
-#Renommer le fichier 
-elif action==4:
-        name1=input('introduire nom du fichier a renommer')
-        name2=input('choisir le nouveau nom')
-        ftp.rename(name1,name2)
-#Supprimer le fichier de votre choix
-elif action==5:
-        name=input('introduire nom du fichier a supprimer')
-        ftp.delete(name)
-#Afficher la liste du repertoir en cours
-elif action==6:
-        ftp.retlines('LIST', callback=None)
-#Envoie du fichier vers un serveur distant
-elif action==7:
-        name= input('nom du ficheir à envoyer')
-        ftp.storbinary('STOR', name, blocksize=8192, callback=None, rest=None)
-elif
-        ftp.quit
+while 1 :
+        action=input('que souhaitez faire(choisir 1 a 7):\n 1: creation dossier \n 2: supprimer dossier \n 3: renommer dossier \n 4: renommer fichier \n 5: supprimer fichier \n 6: lister le contenu du repertoire \7: envoie de fichier')
+        #Création d'un nouveau dossier
+        if action == 1:
+                new_name=input('nom du nouveau dossier')
+                ftp.mkd(new_name)
+        #Suppimer le dossier de votre choix
+        elif action == 2:
+                name=input('nom du dossier a supprimer')
+                ftp.rmd(name)
+        #Renommer le dossier de votre choix
+        elif action==3:
+                name1=input('introduire dossier a renommer')
+                name2=input('choisir le nouveau nom')
+                ftp.rename(name1,name2)
+        #Renommer le fichier 
+        elif action==4:
+                name1=input('introduire nom du fichier a renommer')
+                name2=input('choisir le nouveau nom')
+                ftp.rename(name1,name2)
+        #Supprimer le fichier de votre choix
+        elif action==5:
+                name=input('introduire nom du fichier a supprimer')
+                ftp.delete(name)
+        #Afficher la liste du repertoir en cours
+        elif action==6:
+                ftp.retlines('LIST', callback=None)
+        #Envoie du fichier vers un serveur distant
+        elif action==7:
+                name= input('nom du ficheir à envoyer')
+                ftp.storbinary('STOR', name, blocksize=8192, callback=None, rest=None)
+        elif
+                ftp.quit
